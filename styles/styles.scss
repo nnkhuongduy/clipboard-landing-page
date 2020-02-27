@@ -1,0 +1,251 @@
+$mobile-width: 375px;
+$primary-cyan: hsl(171, 66%, 44%);
+$primary-blue: hsl(233, 100%, 69%);
+$neutral-dark-blue: hsl(210, 10%, 33%);
+$neutral-grayish-blue: hsl(201, 11%, 66%);
+$font-size: 18px;
+
+h1,
+h2,
+h3 {
+  color: $neutral-dark-blue;
+}
+
+button {
+  border: none;
+  font-size: $font-size;
+  padding: 15px 50px;
+  border-radius: 100px;
+  margin: 30px 10px;
+  color: white;
+
+  &.ios-button {
+    background-color: $primary-cyan;
+    -webkit-box-shadow: 0px 3px 0px 0px darken($primary-cyan,15%);
+    -moz-box-shadow: 0px 3px 0px 0px darken($primary-cyan,15%);
+    box-shadow: 0px 3px 0px 0px darken($primary-cyan,15%);
+
+    &:hover {
+      background-color: lighten($primary-cyan,15%);
+      -webkit-box-shadow: 0px 3px 0px 0px lighten(darken($primary-cyan, 15%),15%);
+      -moz-box-shadow: 0px 3px 0px 0px lighten(darken($primary-cyan, 15%),15%);
+      box-shadow: 0px 3px 0px 0px lighten(darken($primary-cyan, 15%),15%);
+    }
+  }
+
+  &.mac-button {
+    background-color: $primary-blue;
+    -webkit-box-shadow: 0px 3px 0px 0px darken($primary-blue,15%);
+    -moz-box-shadow: 0px 3px 0px 0px darken($primary-blue,15%);
+    box-shadow: 0px 3px 0px 0px darken($primary-blue,15%);
+
+    &:hover {
+      background-color: lighten($primary-blue, 15%);
+      -webkit-box-shadow: 0px 3px 0px 0px lighten(darken($primary-blue, 15%), 15%);
+      -moz-box-shadow: 0px 3px 0px 0px lighten(darken($primary-blue, 15%), 15%);
+      box-shadow: 0px 3px 0px 0px lighten(darken($primary-blue, 15%), 15%);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+p {
+  width: 35%;
+  margin: 1em auto;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $primary-cyan;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Bai Jamjuree';
+  font-size: $font-size;
+  color: $neutral-grayish-blue;
+  text-align: center;
+  background-image: url(../images/bg-header-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  user-select: none;
+
+  &:hover {
+    cursor: default;
+  }
+
+  .first-section {
+    margin: 8% auto;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    img {
+      margin-bottom: 30px;
+    }
+  }
+
+  .second-section {
+    margin-bottom: 5%;
+
+  }
+
+  .third-section {
+    margin: 10% auto;
+    
+    .section-content {
+      display: flex;
+      align-items: center;
+
+      .image-container {
+        width: 50%;
+        text-align: right;
+
+        img {
+          
+          width: 110%;
+          position: relative;
+          right: 10%;
+        }
+      }
+
+      .content-container {
+        width: 50%;
+        text-align: left;
+
+        .box-container {
+          margin-left: 12%;
+
+          .text-container {
+            margin: 8% 0;
+  
+            p {
+              margin: 1em 0;
+              font-size: $font-size - 2px;
+              width: 50%;
+            }
+          }
+        }
+
+      }
+    }
+    
+  }
+
+  .fourth-section {
+    margin: 8% auto;
+
+    .image-container {
+      margin: 100px auto;
+    }
+  }
+
+  .fifth-section {
+    margin: 5% auto;
+
+    .section-content {
+
+      .tools-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 80px auto;
+        width: 80%;
+        gap: 50px;
+
+        .tool-holder {
+
+          p {
+            width: 100%;
+            font-size: $font-size - 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .sixth-section {
+    margin: 10%;
+
+    .section-content {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: 0 auto;
+    }
+  }
+
+  .seventh-section {
+    margin: 10% auto;
+  }
+
+  .footer-section {
+    background-color: #F8F8F8;
+
+    .section-content {
+      width: 80%;
+      margin: 0 auto;
+      padding: 50px 0;
+      display: grid;
+      grid-template-columns: 30% 1fr 10%;
+      justify-items: center;
+
+      .image-container {
+        
+        img {
+          width: 65px;
+        }
+      }
+
+      .nav-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-self: left;
+        text-align: left;
+        gap: 50px;
+
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            margin-bottom: 20px;
+            color: $neutral-dark-blue
+          }
+        }
+      }
+
+      .social-container {
+        align-self: center;
+        display: flex;
+
+        img {
+          margin: 0 10px;
+          transition: all 0.2s;
+
+          &:hover {
+            filter: invert(54%) sepia(86%) saturate(377%) hue-rotate(122deg) brightness(95%) contrast(88%);
+          }
+        }
+      }
+    }
+
+    .attribution {
+      font-size: $font-size - 2px;
+      margin-bottom: 50px;
+      
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
