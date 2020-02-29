@@ -5,6 +5,12 @@ $neutral-dark-blue: hsl(210, 10%, 33%);
 $neutral-grayish-blue: hsl(201, 11%, 66%);
 $font-size: 18px;
 
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content
+  }
+}
+
 h1,
 h2,
 h3 {
@@ -21,23 +27,23 @@ button {
 
   &.ios-button {
     background-color: $primary-cyan;
-    -webkit-box-shadow: 0px 3px 0px 0px darken($primary-cyan,15%);
-    -moz-box-shadow: 0px 3px 0px 0px darken($primary-cyan,15%);
-    box-shadow: 0px 3px 0px 0px darken($primary-cyan,15%);
+    -webkit-box-shadow: 0px 3px 0px 0px darken($primary-cyan, 15%);
+    -moz-box-shadow: 0px 3px 0px 0px darken($primary-cyan, 15%);
+    box-shadow: 0px 3px 0px 0px darken($primary-cyan, 15%);
 
     &:hover {
-      background-color: lighten($primary-cyan,15%);
-      -webkit-box-shadow: 0px 3px 0px 0px lighten(darken($primary-cyan, 15%),15%);
-      -moz-box-shadow: 0px 3px 0px 0px lighten(darken($primary-cyan, 15%),15%);
-      box-shadow: 0px 3px 0px 0px lighten(darken($primary-cyan, 15%),15%);
+      background-color: lighten($primary-cyan, 15%);
+      -webkit-box-shadow: 0px 3px 0px 0px lighten(darken($primary-cyan, 15%), 15%);
+      -moz-box-shadow: 0px 3px 0px 0px lighten(darken($primary-cyan, 15%), 15%);
+      box-shadow: 0px 3px 0px 0px lighten(darken($primary-cyan, 15%), 15%);
     }
   }
 
   &.mac-button {
     background-color: $primary-blue;
-    -webkit-box-shadow: 0px 3px 0px 0px darken($primary-blue,15%);
-    -moz-box-shadow: 0px 3px 0px 0px darken($primary-blue,15%);
-    box-shadow: 0px 3px 0px 0px darken($primary-blue,15%);
+    -webkit-box-shadow: 0px 3px 0px 0px darken($primary-blue, 15%);
+    -moz-box-shadow: 0px 3px 0px 0px darken($primary-blue, 15%);
+    box-shadow: 0px 3px 0px 0px darken($primary-blue, 15%);
 
     &:hover {
       background-color: lighten($primary-blue, 15%);
@@ -50,11 +56,20 @@ button {
   &:hover {
     cursor: pointer;
   }
+
+  @include mobile {
+    margin: 15px 0;
+    width: 100%;
+  }
 }
 
 p {
   width: 35%;
   margin: 1em auto;
+
+  @include mobile {
+    width: unset;
+  }
 }
 
 a {
@@ -101,7 +116,7 @@ body {
 
   .third-section {
     margin: 10% auto;
-    
+
     .section-content {
       display: flex;
       align-items: center;
@@ -111,7 +126,7 @@ body {
         text-align: right;
 
         img {
-          
+
           width: 110%;
           position: relative;
           right: 10%;
@@ -127,7 +142,7 @@ body {
 
           .text-container {
             margin: 8% 0;
-  
+
             p {
               margin: 1em 0;
               font-size: $font-size - 2px;
@@ -138,7 +153,7 @@ body {
 
       }
     }
-    
+
   }
 
   .fourth-section {
@@ -146,6 +161,10 @@ body {
 
     .image-container {
       margin: 100px auto;
+
+      img {
+        max-width: 100%;
+      }
     }
   }
 
@@ -199,7 +218,7 @@ body {
       justify-items: center;
 
       .image-container {
-        
+
         img {
           width: 65px;
         }
@@ -241,10 +260,162 @@ body {
 
     .attribution {
       font-size: $font-size - 2px;
-      margin-bottom: 50px;
-      
+      padding-bottom: 50px;
+
       a {
         text-decoration: underline;
+      }
+    }
+  }
+
+  @include mobile {
+    background-image: url(../images/bg-header-mobile.png);
+    font-size: $font-size - 2px;
+
+
+    .first-section {
+      margin: 150px auto;
+      padding: 0 30px;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        margin-bottom: 3em;
+      }
+    }
+
+    .second-section {
+      margin: 50px 0;
+      padding: 0 30px;
+    }
+
+    .third-section {
+      padding: 0 30px;
+
+      .section-content {
+        flex-direction: column;
+
+        .image-container {
+          width: unset;
+
+          img {
+            width: 100%;
+            position: unset;
+            right: unset;
+
+          }
+        }
+
+        .content-container {
+          width: unset;
+          text-align: center;
+          margin: 20px auto 150px;
+
+          .box-container {
+            margin: unset;
+
+            .text-container {
+              margin: 40px 0;
+
+              p {
+                margin: 1em auto;
+                width: unset;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .fourth-section {
+      padding: 0 30px;
+
+      .section-content {
+
+        .image-container {
+          margin-top: 50px;
+        }
+      }
+    }
+
+    .fifth-section {
+      padding: 0 30px;
+
+      .section-content {
+
+        .tools-container {
+          grid-template-columns: unset;
+          grid-template-rows: repeat(3, 1fr);
+          gap: 25px;
+        }
+      }
+    }
+
+    .sixth-section {
+      margin: 10% 0;
+      padding: 0 30px;
+
+      .section-content {
+        flex-direction: column;
+
+        img {
+          margin: 30px;
+        }
+      }
+    }
+
+    .seventh-section {
+      margin: 150px auto;
+      padding: 0 30px;
+
+      p {
+        margin-bottom: 2em;
+      }
+    }
+
+    .footer-section {
+      padding: 0 30px;
+
+      .section-content {
+        width: unset;
+        padding: unset;
+        grid-template-columns: unset;
+        grid-template-rows: repeat(3, max-content);
+        padding: 20px 0;
+
+        .image-container {
+          margin: 30px 0;
+        }
+
+        .nav-container {
+          grid-template-columns: none;
+          grid-template-rows: repeat(3, max-content);
+          justify-self: center;
+          text-align: center;
+          gap: unset;
+
+        }
+
+        .social-container {
+          margin: 20px 0;
+
+          a {
+
+            img {
+              margin: 0 15px;
+            }
+          }
+        }
+
+      }
+
+      .attribution {
+
+        a {
+          color: $primary-cyan;
+        }
       }
     }
   }
