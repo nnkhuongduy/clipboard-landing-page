@@ -201,7 +201,7 @@ body .seventh-section {
 }
 
 body .footer-section {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
 }
 
 body .footer-section .section-content {
@@ -391,6 +391,97 @@ body .footer-section .attribution a {
   }
   body .footer-section .attribution a {
     color: #26baa4;
+  }
+}
+
+.slide-left {
+  position: relative;
+  -webkit-animation-name: left-slide;
+          animation-name: left-slide;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes left-slide {
+  from {
+    opacity: 0;
+    right: 500px;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes left-slide {
+  from {
+    opacity: 0;
+    right: 500px;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+.slide-right {
+  position: relative;
+  -webkit-animation-name: right-slide;
+          animation-name: right-slide;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes right-slide {
+  from {
+    opacity: 0;
+    left: 500px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes right-slide {
+  from {
+    opacity: 0;
+    left: 500px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.fade-in {
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=styles.css.map */
